@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 class Model_AutoModeler_ORM_User extends AutoModeler_ORM {
-	
+
 	public function __set($key, $value)
 	{
 		if($key == 'password')
@@ -14,6 +14,8 @@ class Model_AutoModeler_ORM_User extends AutoModeler_ORM {
 	
 	protected $_table_name = 'users';
 
+	protected $_has_many = array('roles');
+	
 	protected $_data = array(
 		'id' => '',
 		'username' => '',
@@ -31,6 +33,7 @@ class Model_AutoModeler_ORM_User extends AutoModeler_ORM {
 			array('email'),
 		),
 	);
+
 	
 	/**
 	 * Called by Auth each login.
