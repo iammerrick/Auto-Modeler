@@ -82,7 +82,7 @@ class Auth_AutoModeler_ORM extends Auth {
 			$username = $user;
 
 			// Load the user
-			$user = new Model_User($username);
+			$user = AutoModeler_ORM::factory('user')->load(db::select()->where('username', '=', $username));
 		}
 
 		// If the passwords match, perform a login
