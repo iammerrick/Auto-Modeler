@@ -307,8 +307,13 @@ class AutoModeler_Core extends Model_Database implements ArrayAccess
 	 * @return null
 	 *
 	 */
-	public function set_fields(array $data)
+	public function set_fields(array $data, array $keys = NULL)
 	{
+		if(is_array($keys))
+		{
+			$data = Arr::extract($data, $keys);
+		}
+		
 		foreach (array_intersect_key($data, $this->_data) as $key => $value)
 		{
 			$this->$key = $value;

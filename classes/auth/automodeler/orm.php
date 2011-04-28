@@ -79,10 +79,10 @@ class Auth_AutoModeler_ORM extends Auth {
 	{
 		if ( ! is_object($user))
 		{
-			$username = $user;
+			$unique_key = $user;
 
 			// Load the user
-			$user = new Model_User($username);
+			$user = new Model_User($unique_key);
 		}
 
 		// If the passwords match, perform a login
