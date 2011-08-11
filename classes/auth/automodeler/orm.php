@@ -125,7 +125,7 @@ class Auth_AutoModeler_ORM extends Auth {
 			$username = $user;
 
 			// Load the user
-			$user = ORM::factory('user');
+			$user = AutoModeler_ORM::factory('user');
 			$user->where($user->unique_key($username), '=', $username)->find();
 		}
 
