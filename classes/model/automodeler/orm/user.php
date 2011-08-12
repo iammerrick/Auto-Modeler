@@ -45,14 +45,15 @@ class Model_AutoModeler_ORM_User extends AutoModeler_ORM {
 	{
 		if ($this->loaded())
 		{
-			// Update the number of logins
-			$this->logins = new Database_Expression('logins + 1');
-
-			// Set the last login date
-			$this->last_login = time();
-
-			// Save the user
-			$this->save();
+			$query = DB::update('users')
+				->set(array(
+					'logins' => DB::expr('logins + 1'),
+					'last_login' =>  time()
+					
+				)
+			)->where('id', '=', $this->id);
+			
+			$query->execute($this->_db);
 		}
 	}
 }
