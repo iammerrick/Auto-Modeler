@@ -265,7 +265,9 @@ class Auth_AutoModeler_ORM extends Auth {
 	protected function complete_login($user)
 	{
 		$user->complete_login();
-
+		/*
+			TODO If username is changed, they are logged out. Programming is hard.
+		*/
 		return parent::complete_login($user->username);
 	}
 
