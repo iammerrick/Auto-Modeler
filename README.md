@@ -1,4 +1,4 @@
-# auto-modeler: Simple and easy to use Kohana 3.0 CRUD/ORM library
+# Auto-Modeler: Simple and easy to use Kohana 3.x CRUD/ORM library
 
 ## What does it do?
 
